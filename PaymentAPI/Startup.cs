@@ -36,7 +36,7 @@ namespace PaymentAPI
             });
 
             services.AddDbContext<PaymentDetailContext>(options =>
-            options.UseSqlServer());
+            options.UseSqlServer(Configuration.GetConnectionString("DevConnectionString")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
