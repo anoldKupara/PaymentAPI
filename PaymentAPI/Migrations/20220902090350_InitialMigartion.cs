@@ -2,7 +2,7 @@
 
 namespace PaymentAPI.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class InitialMigartion : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -10,16 +10,16 @@ namespace PaymentAPI.Migrations
                 name: "PaymentDetails",
                 columns: table => new
                 {
-                    PaymentDetailId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CardOwnerName = table.Column<string>(type: "nvarchar(100)", nullable: true),
-                    CardNumber = table.Column<string>(type: "nvarchar(16)", nullable: true),
-                    ExpirationDate = table.Column<string>(type: "nvarchar(5)", nullable: true),
-                    SecurityCode = table.Column<string>(type: "nvarchar(3)", nullable: true)
+                    CardNumber = table.Column<string>(type: "nvarchar(50)", nullable: true),
+                    ExpirationDate = table.Column<string>(type: "nvarchar(50)", nullable: true),
+                    SecurityCode = table.Column<string>(type: "nvarchar(10)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PaymentDetails", x => x.PaymentDetailId);
+                    table.PrimaryKey("PK_PaymentDetails", x => x.Id);
                 });
         }
 

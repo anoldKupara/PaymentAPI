@@ -20,24 +20,24 @@ namespace PaymentAPI.Migrations
 
             modelBuilder.Entity("PaymentAPI.Models.PaymentDetail", b =>
                 {
-                    b.Property<int>("PaymentDetailId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("CardNumber")
-                        .HasColumnType("nvarchar(16)");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("CardOwnerName")
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("ExpirationDate")
-                        .HasColumnType("nvarchar(5)");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("SecurityCode")
-                        .HasColumnType("nvarchar(3)");
+                        .HasColumnType("nvarchar(10)");
 
-                    b.HasKey("PaymentDetailId");
+                    b.HasKey("Id");
 
                     b.ToTable("PaymentDetails");
                 });
